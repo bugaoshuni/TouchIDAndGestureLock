@@ -11,9 +11,7 @@ import LocalAuthentication
 
 class ViewController: UIViewController {
     
-    // MARK: - Properties
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,8 +20,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    
-    // MARK: - XXXXXDelegate
     // MARK: - EventResponse
     @IBAction func touchID(sender: UIButton) {
         let laContext = LAContext()
@@ -116,13 +112,5 @@ class ViewController: UIViewController {
         
         self.presentViewController(passwordAlert, animated: true, completion: nil)
     }
-    
-    
-    // MARK: - PublicMethod
-    // MARK: - Request
-    // MARK: - SetterGetter
-
-    
-    
 }
 

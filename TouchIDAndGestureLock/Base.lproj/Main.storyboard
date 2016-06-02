@@ -47,10 +47,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-Mw-D9m">
-                                <rect key="frame" x="20" y="244" width="560" height="40"/>
+                                <rect key="frame" x="20" y="244" width="560" height="50"/>
                                 <color key="backgroundColor" red="0.17629419130000001" green="0.2064200102" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1bk-RI-cCq"/>
+                                    <constraint firstAttribute="height" constant="50" id="1bk-RI-cCq"/>
                                 </constraints>
                                 <state key="normal" title="设置手势密码">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,30 +59,14 @@
                                     <action selector="gestureLock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awh-wj-ExD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0u-LL-udY">
-                                <rect key="frame" x="20" y="314" width="560" height="40"/>
-                                <color key="backgroundColor" red="0.17629419130000001" green="0.2064200102" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="nmj-pQ-Hn8"/>
-                                </constraints>
-                                <state key="normal" title="设置手势密码">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gestureLock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gv-JQ-FeB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NaV-Mw-D9m" firstAttribute="top" secondItem="LFA-Is-pZv" secondAttribute="bottom" constant="60" id="1YC-vR-4GH"/>
-                            <constraint firstItem="A0u-LL-udY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="2MT-kF-xAe"/>
                             <constraint firstItem="NaV-Mw-D9m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8PK-b9-Cb4"/>
                             <constraint firstAttribute="trailing" secondItem="LFA-Is-pZv" secondAttribute="trailing" constant="20" id="9td-WH-1w0"/>
                             <constraint firstItem="LFA-Is-pZv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="IjA-aM-RgH"/>
-                            <constraint firstAttribute="trailing" secondItem="A0u-LL-udY" secondAttribute="trailing" constant="20" id="Jxi-Uq-ykA"/>
                             <constraint firstAttribute="trailing" secondItem="NaV-Mw-D9m" secondAttribute="trailing" constant="20" id="MKd-DO-pvf"/>
-                            <constraint firstItem="A0u-LL-udY" firstAttribute="top" secondItem="NaV-Mw-D9m" secondAttribute="bottom" constant="30" id="gsy-dh-daF"/>
                             <constraint firstItem="LFA-Is-pZv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="irg-SD-cy7"/>
                         </constraints>
                     </view>

@@ -10,16 +10,16 @@ import UIKit
 
 class GestureLockView: UIView {
     // MARK: - Properties
-    let screenWidth = UIScreen.mainScreen().bounds.size.width
-
-    var btnArray:[UIButton] = [UIButton]()
-    //选中的按钮 的tag值
-    var selectBtnTagArray:[Int] = [Int]()
-    //手势中手指当前 的位置
-    var gesturePoint:CGPoint = CGPoint()
-    //按钮的宽高
-    let btnWH:CGFloat = 70
+    var gestureLockDelegate:GestureLockProtocol?
     
+    let screenWidth = UIScreen.mainScreen().bounds.size.width
+    var btnArray:[UIButton] = [UIButton]()
+
+    var selectBtnTagArray:[Int] = [Int]()   //选中的按钮 的tag值
+    var gesturePoint:CGPoint = CGPoint()    //手势中手指当前 的位置
+    let btnWH:CGFloat = 70                  //按钮的宽高
+    let btnImgNormal = "gesture_node_normal"
+    let btnImgSelected =  "gesture_node_selected"
     
     // MARK: - Lifecycle
      override init(frame:CGRect) {
@@ -28,24 +28,22 @@ class GestureLockView: UIView {
         initButtons()
     }
     
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func drawRect(rect: CGRect) {
         print("执行drawRect")
-        let context = UIGraphicsGetCurrentContext()//获取画笔上下文
-//        CGContextClearRect(context, rect)
+        let context = UIGraphicsGetCurrentContext() //获取画笔上下文
         
         var i = 0
         for tag in selectBtnTagArray {
             if (0 == i) {
-                //设置 直线的起点
-                CGContextMoveToPoint(context, btnArray[tag].center.x, btnArray[tag].center.y);
+                //开始画线,设置直线的起点坐标
+                CGContextMoveToPoint(context, btnArray[tag].center.x, btnArray[tag].center.y)
             } else {
-                //新加 一段直线
-                CGContextAddLineToPoint(context, btnArray[tag].center.x,btnArray[tag].center.y);
+                //画直线,设置直线的终点坐标
+                CGContextAddLineToPoint(context, btnArray[tag].center.x,btnArray[tag].center.y)
             }
             i = i+1
         }
@@ -54,15 +52,15 @@ class GestureLockView: UIView {
         if (selectBtnTagArray.count > 0) {
             // 移除最后一条多余的线，
             if gesturePoint != CGPointZero {
-                CGContextAddLineToPoint(context, gesturePoint.x, gesturePoint.y);
+                CGContextAddLineToPoint(context, gesturePoint.x, gesturePoint.y)
             }
         }
 
-        CGContextSetLineWidth(context, 10);//设置画笔宽度
-        CGContextSetLineJoin(context, .Round);
-        CGContextSetLineCap(context, .Round);
-        CGContextSetRGBStrokeColor(context, 20/255.0, 107/255.0, 153/255.0, 1);
-        CGContextStrokePath(context);
+        CGContextSetLineWidth(context, 10)      //设置画笔宽度
+        CGContextSetLineJoin(context, .Round)   //两个线相交点 平滑处理
+        CGContextSetLineCap(context, .Round)    //设置线条两端的样式为圆角
+        CGContextSetRGBStrokeColor(context, 227/255.0, 54/255.0, 58/255.0, 1)
+        CGContextStrokePath(context)            // //对线条进行渲染
     }
     
     // MARK: - Override
@@ -78,7 +76,7 @@ class GestureLockView: UIView {
         touchesChange(touches)
     }
     
-    //当触摸被取消（比如触摸过程中被来电打断），就会调用touchesCancelled:withEvent方法。而这几个方法被调用时，正好对应了UITouch类中phase属性的4个枚举值。
+    //当触摸被取消（比如触摸过程中被来电打断），就会调用touchesCancelled:withEvent方法。
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         
     }
@@ -87,19 +85,18 @@ class GestureLockView: UIView {
         print("执行touchesEnded")
         var alertTitle =  "请设置正确的手势"
         var alertMessage = "手势密码不能少于4个"
+        var isSuccess = false
+        
         if selectBtnTagArray.count >= 4 {
-            
             alertTitle =  "手势密码设置成功"
+            isSuccess = true
             alertMessage = "密码为：\(selectBtnTagArray)"
-            
         }
-        let errorAlert = UIAlertView(title: alertTitle, message: alertMessage, delegate: self, cancelButtonTitle: "确定")
-        errorAlert.show()
+        
+        gestureLockDelegate!.gestureLockSuccess(isSuccess, title: alertTitle, message: alertMessage)
         
         gesturePoint = CGPointZero;
         self.setNeedsDisplay()
-        
-        self.performSelector(#selector(recoverNodeStatus), withObject: nil, afterDelay: 1.0)
     }
 
     // MARK: - PrivateMethod
@@ -117,7 +114,7 @@ class GestureLockView: UIView {
             let gestureNodeBtn = UIButton(frame:CGRectMake(btnX, btnY, btnWH, btnWH))
             gestureNodeBtn.tag = i
             gestureNodeBtn.userInteractionEnabled = false   //不响应用户的交互。一定要加上这句
-            gestureNodeBtn.setImage(UIImage(named: "gesture_node_normal"), forState: .Normal)
+            gestureNodeBtn.setImage(UIImage(named: btnImgNormal), forState: .Normal)
             self.addSubview(gestureNodeBtn)
             btnArray.append(gestureNodeBtn)
         }
@@ -140,18 +137,18 @@ class GestureLockView: UIView {
                 //保存中间跳跃 过的节点
                 for btn in btnArray {
                     if  !selectBtnTagArray.contains(btn.tag) && CGRectContainsPoint(btn.frame, lineCenterPoint)  {
+                        btn.setImage(UIImage(named: btnImgSelected), forState: .Normal)
                         selectBtnTagArray.append(btn.tag)
                     }
                 }
                 
                 //保存划过的按钮的tag
                 selectBtnTagArray.append(btn.tag)
-                
-                btn.setImage(UIImage(named: "gesture_node_normal"), forState: .Normal)
+                btn.setImage(UIImage(named: btnImgSelected), forState: .Normal)
             }
         }
         
-        //setNeedsDisplay和setNeedsLayout。 两个方法都是异步执行的。而setNeedsDisplay会自动调用drawRect方法，这样可以拿到  UIGraphicsGetCurrentContext，就可以画画了。而setNeedsLayout会默认调用layoutSubViews，
+        //setNeedsDisplay会自动调用drawRect方法 进行画线
         self.setNeedsDisplay()
     }
     
@@ -161,16 +158,16 @@ class GestureLockView: UIView {
         let leftPoint = startPoint.x < endPoint.x ? startPoint.x : endPoint.x
         
         let topPoint = startPoint.y > endPoint.y ? startPoint.y : endPoint.y
-        let bottom = startPoint.y < endPoint.y ? startPoint.y : endPoint.y
+        let bottomPoint = startPoint.y < endPoint.y ? startPoint.y : endPoint.y
         
         //x坐标： leftPoint +（rightPoint-leftPoint)/2 = (rightPoint+leftPoint)/2
-        return CGPointMake((rightPoint+leftPoint)/2, (topPoint + bottom)/2);
+        return CGPointMake((rightPoint + leftPoint)/2 + btnWH/2, (topPoint + bottomPoint)/2 + btnWH/2);
     }
     
     func recoverNodeStatus() {
         selectBtnTagArray.removeAll()
         for btn in btnArray {
-            btn.setImage(UIImage(named: "gesture_node_normal"), forState: .Normal)
+            btn.setImage(UIImage(named: btnImgNormal), forState: .Normal)
         }
         self.setNeedsDisplay()
     }
