@@ -126,11 +126,25 @@ class GestureLockView: UIView {
     private func touchesChange(touches: Set<UITouch>) {
         //获取 触摸对象 ,触摸对象的位置坐标来实现
         gesturePoint = touches.first!.locationInView(self)
- 
-        //保存划过的按钮的tag
+
         for btn in btnArray {
             //判断 手指的坐标 是否在 button的坐标里
             if !selectBtnTagArray.contains(btn.tag) && CGRectContainsPoint(btn.frame, gesturePoint) {
+                //处理跳跃连线
+                var lineCenterPoint:CGPoint = CGPoint()
+                
+                if selectBtnTagArray.count > 0 {
+                    lineCenterPoint = centerPoint(btn.frame.origin, endPoint: btnArray[selectBtnTagArray.last!].frame.origin)
+                }
+                
+                //保存中间跳跃 过的节点
+                for btn in btnArray {
+                    if  !selectBtnTagArray.contains(btn.tag) && CGRectContainsPoint(btn.frame, lineCenterPoint)  {
+                        selectBtnTagArray.append(btn.tag)
+                    }
+                }
+                
+                //保存划过的按钮的tag
                 selectBtnTagArray.append(btn.tag)
                 
                 btn.setImage(UIImage(named: "gesture_node_normal"), forState: .Normal)
@@ -139,6 +153,18 @@ class GestureLockView: UIView {
         
         //setNeedsDisplay和setNeedsLayout。 两个方法都是异步执行的。而setNeedsDisplay会自动调用drawRect方法，这样可以拿到  UIGraphicsGetCurrentContext，就可以画画了。而setNeedsLayout会默认调用layoutSubViews，
         self.setNeedsDisplay()
+    }
+    
+    //计算2个节点中心的坐标
+    private func centerPoint(startPoint: CGPoint, endPoint:CGPoint) -> CGPoint {
+        let rightPoint = startPoint.x > endPoint.x ? startPoint.x : endPoint.x
+        let leftPoint = startPoint.x < endPoint.x ? startPoint.x : endPoint.x
+        
+        let topPoint = startPoint.y > endPoint.y ? startPoint.y : endPoint.y
+        let bottom = startPoint.y < endPoint.y ? startPoint.y : endPoint.y
+        
+        //x坐标： leftPoint +（rightPoint-leftPoint)/2 = (rightPoint+leftPoint)/2
+        return CGPointMake((rightPoint+leftPoint)/2, (topPoint + bottom)/2);
     }
     
     func recoverNodeStatus() {
