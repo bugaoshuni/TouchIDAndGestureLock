@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d2I-oF-NaB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="R3q-NN-jwf">
+            <objects>
+                <navigationController id="d2I-oF-NaB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u2A-uh-QAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eIn-KV-EKx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCV-MS-ZWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1511" y="519"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TouchIDAndGestureLock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFA-Is-pZv">
+                                <rect key="frame" x="20" y="134" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.21176470589999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GBU-5g-hFP"/>
+                                </constraints>
+                                <state key="normal" title="指纹解锁">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgx-bk-j9H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaV-Mw-D9m">
+                                <rect key="frame" x="20" y="244" width="560" height="40"/>
+                                <color key="backgroundColor" red="0.17629419130000001" green="0.2064200102" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1bk-RI-cCq"/>
+                                </constraints>
+                                <state key="normal" title="设置手势密码">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gestureLock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awh-wj-ExD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0u-LL-udY">
+                                <rect key="frame" x="20" y="314" width="560" height="40"/>
+                                <color key="backgroundColor" red="0.17629419130000001" green="0.2064200102" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nmj-pQ-Hn8"/>
+                                </constraints>
+                                <state key="normal" title="设置手势密码">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gestureLock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gv-JQ-FeB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NaV-Mw-D9m" firstAttribute="top" secondItem="LFA-Is-pZv" secondAttribute="bottom" constant="60" id="1YC-vR-4GH"/>
+                            <constraint firstItem="A0u-LL-udY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="2MT-kF-xAe"/>
+                            <constraint firstItem="NaV-Mw-D9m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8PK-b9-Cb4"/>
+                            <constraint firstAttribute="trailing" secondItem="LFA-Is-pZv" secondAttribute="trailing" constant="20" id="9td-WH-1w0"/>
+                            <constraint firstItem="LFA-Is-pZv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="IjA-aM-RgH"/>
+                            <constraint firstAttribute="trailing" secondItem="A0u-LL-udY" secondAttribute="trailing" constant="20" id="Jxi-Uq-ykA"/>
+                            <constraint firstAttribute="trailing" secondItem="NaV-Mw-D9m" secondAttribute="trailing" constant="20" id="MKd-DO-pvf"/>
+                            <constraint firstItem="A0u-LL-udY" firstAttribute="top" secondItem="NaV-Mw-D9m" secondAttribute="bottom" constant="30" id="gsy-dh-daF"/>
+                            <constraint firstItem="LFA-Is-pZv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="irg-SD-cy7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dEq-ma-uEX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="531"/>
+        </scene>
+    </scenes>
+</document>

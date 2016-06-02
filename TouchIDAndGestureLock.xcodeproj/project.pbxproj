@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24A3FC691CFE89CB009D669C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC681CFE89CB009D669C /* AppDelegate.swift */; };
+		24A3FC6B1CFE89CB009D669C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC6A1CFE89CB009D669C /* ViewController.swift */; };
+		24A3FC6E1CFE89CB009D669C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A3FC6C1CFE89CB009D669C /* Main.storyboard */; };
+		24A3FC701CFE89CB009D669C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A3FC6F1CFE89CB009D669C /* Assets.xcassets */; };
+		24A3FC731CFE89CB009D669C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A3FC711CFE89CB009D669C /* LaunchScreen.storyboard */; };
+		24A3FC7E1CFE89CC009D669C /* TouchIDAndGestureLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC7D1CFE89CC009D669C /* TouchIDAndGestureLockTests.swift */; };
+		24A3FC891CFE89CC009D669C /* TouchIDAndGestureLockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC881CFE89CC009D669C /* TouchIDAndGestureLockUITests.swift */; };
+		24A3FC971CFEDB8F009D669C /* GestureLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC961CFEDB8F009D669C /* GestureLockViewController.swift */; };
+		24A3FC991CFEEBE2009D669C /* GestureLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3FC981CFEEBE2009D669C /* GestureLockView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24A3FC7A1CFE89CB009D669C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24A3FC5D1CFE89CB009D669C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24A3FC641CFE89CB009D669C;
+			remoteInfo = TouchIDAndGestureLock;
+		};
+		24A3FC851CFE89CC009D669C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24A3FC5D1CFE89CB009D669C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24A3FC641CFE89CB009D669C;
+			remoteInfo = TouchIDAndGestureLock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24A3FC651CFE89CB009D669C /* TouchIDAndGestureLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchIDAndGestureLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A3FC681CFE89CB009D669C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24A3FC6A1CFE89CB009D669C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24A3FC6D1CFE89CB009D669C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24A3FC6F1CFE89CB009D669C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24A3FC721CFE89CB009D669C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24A3FC741CFE89CB009D669C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24A3FC791CFE89CB009D669C /* TouchIDAndGestureLockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchIDAndGestureLockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A3FC7D1CFE89CC009D669C /* TouchIDAndGestureLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDAndGestureLockTests.swift; sourceTree = "<group>"; };
+		24A3FC7F1CFE89CC009D669C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24A3FC841CFE89CC009D669C /* TouchIDAndGestureLockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchIDAndGestureLockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A3FC881CFE89CC009D669C /* TouchIDAndGestureLockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDAndGestureLockUITests.swift; sourceTree = "<group>"; };
+		24A3FC8A1CFE89CC009D669C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24A3FC961CFEDB8F009D669C /* GestureLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureLockViewController.swift; sourceTree = "<group>"; };
+		24A3FC981CFEEBE2009D669C /* GestureLockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureLockView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24A3FC621CFE89CB009D669C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC761CFE89CB009D669C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC811CFE89CC009D669C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24A3FC5C1CFE89CB009D669C = {
+			isa = PBXGroup;
+			children = (
+				24A3FC671CFE89CB009D669C /* TouchIDAndGestureLock */,
+				24A3FC7C1CFE89CC009D669C /* TouchIDAndGestureLockTests */,
+				24A3FC871CFE89CC009D669C /* TouchIDAndGestureLockUITests */,
+				24A3FC661CFE89CB009D669C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24A3FC661CFE89CB009D669C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24A3FC651CFE89CB009D669C /* TouchIDAndGestureLock.app */,
+				24A3FC791CFE89CB009D669C /* TouchIDAndGestureLockTests.xctest */,
+				24A3FC841CFE89CC009D669C /* TouchIDAndGestureLockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24A3FC671CFE89CB009D669C /* TouchIDAndGestureLock */ = {
+			isa = PBXGroup;
+			children = (
+				24A3FC681CFE89CB009D669C /* AppDelegate.swift */,
+				24A3FC6A1CFE89CB009D669C /* ViewController.swift */,
+				24A3FC6C1CFE89CB009D669C /* Main.storyboard */,
+				24A3FC6F1CFE89CB009D669C /* Assets.xcassets */,
+				24A3FC711CFE89CB009D669C /* LaunchScreen.storyboard */,
+				24A3FC741CFE89CB009D669C /* Info.plist */,
+				24A3FC961CFEDB8F009D669C /* GestureLockViewController.swift */,
+				24A3FC981CFEEBE2009D669C /* GestureLockView.swift */,
+			);
+			path = TouchIDAndGestureLock;
+			sourceTree = "<group>";
+		};
+		24A3FC7C1CFE89CC009D669C /* TouchIDAndGestureLockTests */ = {
+			isa = PBXGroup;
+			children = (
+				24A3FC7D1CFE89CC009D669C /* TouchIDAndGestureLockTests.swift */,
+				24A3FC7F1CFE89CC009D669C /* Info.plist */,
+			);
+			path = TouchIDAndGestureLockTests;
+			sourceTree = "<group>";
+		};
+		24A3FC871CFE89CC009D669C /* TouchIDAndGestureLockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24A3FC881CFE89CC009D669C /* TouchIDAndGestureLockUITests.swift */,
+				24A3FC8A1CFE89CC009D669C /* Info.plist */,
+			);
+			path = TouchIDAndGestureLockUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24A3FC641CFE89CB009D669C /* TouchIDAndGestureLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24A3FC8D1CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLock" */;
+			buildPhases = (
+				24A3FC611CFE89CB009D669C /* Sources */,
+				24A3FC621CFE89CB009D669C /* Frameworks */,
+				24A3FC631CFE89CB009D669C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TouchIDAndGestureLock;
+			productName = TouchIDAndGestureLock;
+			productReference = 24A3FC651CFE89CB009D669C /* TouchIDAndGestureLock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24A3FC781CFE89CB009D669C /* TouchIDAndGestureLockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24A3FC901CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLockTests" */;
+			buildPhases = (
+				24A3FC751CFE89CB009D669C /* Sources */,
+				24A3FC761CFE89CB009D669C /* Frameworks */,
+				24A3FC771CFE89CB009D669C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24A3FC7B1CFE89CB009D669C /* PBXTargetDependency */,
+			);
+			name = TouchIDAndGestureLockTests;
+			productName = TouchIDAndGestureLockTests;
+			productReference = 24A3FC791CFE89CB009D669C /* TouchIDAndGestureLockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24A3FC831CFE89CC009D669C /* TouchIDAndGestureLockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24A3FC931CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLockUITests" */;
+			buildPhases = (
+				24A3FC801CFE89CC009D669C /* Sources */,
+				24A3FC811CFE89CC009D669C /* Frameworks */,
+				24A3FC821CFE89CC009D669C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24A3FC861CFE89CC009D669C /* PBXTargetDependency */,
+			);
+			name = TouchIDAndGestureLockUITests;
+			productName = TouchIDAndGestureLockUITests;
+			productReference = 24A3FC841CFE89CC009D669C /* TouchIDAndGestureLockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24A3FC5D1CFE89CB009D669C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = hjc;
+				TargetAttributes = {
+					24A3FC641CFE89CB009D669C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					24A3FC781CFE89CB009D669C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 24A3FC641CFE89CB009D669C;
+					};
+					24A3FC831CFE89CC009D669C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 24A3FC641CFE89CB009D669C;
+					};
+				};
+			};
+			buildConfigurationList = 24A3FC601CFE89CB009D669C /* Build configuration list for PBXProject "TouchIDAndGestureLock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24A3FC5C1CFE89CB009D669C;
+			productRefGroup = 24A3FC661CFE89CB009D669C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24A3FC641CFE89CB009D669C /* TouchIDAndGestureLock */,
+				24A3FC781CFE89CB009D669C /* TouchIDAndGestureLockTests */,
+				24A3FC831CFE89CC009D669C /* TouchIDAndGestureLockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24A3FC631CFE89CB009D669C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A3FC731CFE89CB009D669C /* LaunchScreen.storyboard in Resources */,
+				24A3FC701CFE89CB009D669C /* Assets.xcassets in Resources */,
+				24A3FC6E1CFE89CB009D669C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC771CFE89CB009D669C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC821CFE89CC009D669C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24A3FC611CFE89CB009D669C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A3FC971CFEDB8F009D669C /* GestureLockViewController.swift in Sources */,
+				24A3FC6B1CFE89CB009D669C /* ViewController.swift in Sources */,
+				24A3FC691CFE89CB009D669C /* AppDelegate.swift in Sources */,
+				24A3FC991CFEEBE2009D669C /* GestureLockView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC751CFE89CB009D669C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A3FC7E1CFE89CC009D669C /* TouchIDAndGestureLockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24A3FC801CFE89CC009D669C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A3FC891CFE89CC009D669C /* TouchIDAndGestureLockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24A3FC7B1CFE89CB009D669C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24A3FC641CFE89CB009D669C /* TouchIDAndGestureLock */;
+			targetProxy = 24A3FC7A1CFE89CB009D669C /* PBXContainerItemProxy */;
+		};
+		24A3FC861CFE89CC009D669C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24A3FC641CFE89CB009D669C /* TouchIDAndGestureLock */;
+			targetProxy = 24A3FC851CFE89CC009D669C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24A3FC6C1CFE89CB009D669C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24A3FC6D1CFE89CB009D669C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24A3FC711CFE89CB009D669C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24A3FC721CFE89CB009D669C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24A3FC8B1CFE89CC009D669C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24A3FC8C1CFE89CC009D669C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24A3FC8E1CFE89CC009D669C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TouchIDAndGestureLock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		24A3FC8F1CFE89CC009D669C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TouchIDAndGestureLock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		24A3FC911CFE89CC009D669C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TouchIDAndGestureLockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchIDAndGestureLock.app/TouchIDAndGestureLock";
+			};
+			name = Debug;
+		};
+		24A3FC921CFE89CC009D669C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TouchIDAndGestureLockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchIDAndGestureLock.app/TouchIDAndGestureLock";
+			};
+			name = Release;
+		};
+		24A3FC941CFE89CC009D669C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TouchIDAndGestureLockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TouchIDAndGestureLock;
+			};
+			name = Debug;
+		};
+		24A3FC951CFE89CC009D669C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TouchIDAndGestureLockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hejichang.TouchIDAndGestureLockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TouchIDAndGestureLock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24A3FC601CFE89CB009D669C /* Build configuration list for PBXProject "TouchIDAndGestureLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A3FC8B1CFE89CC009D669C /* Debug */,
+				24A3FC8C1CFE89CC009D669C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24A3FC8D1CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A3FC8E1CFE89CC009D669C /* Debug */,
+				24A3FC8F1CFE89CC009D669C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		24A3FC901CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A3FC911CFE89CC009D669C /* Debug */,
+				24A3FC921CFE89CC009D669C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		24A3FC931CFE89CC009D669C /* Build configuration list for PBXNativeTarget "TouchIDAndGestureLockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A3FC941CFE89CC009D669C /* Debug */,
+				24A3FC951CFE89CC009D669C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24A3FC5D1CFE89CB009D669C /* Project object */;
+}
